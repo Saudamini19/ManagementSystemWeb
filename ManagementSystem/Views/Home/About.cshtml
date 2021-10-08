@@ -1,27 +1,53 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-        <div class="navbar-header">
+        <div class="container">
+            <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("NTT Data Talent Development Team", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-        <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Dashboard", "About", "Home")</li>
+                    <li>@Html.ActionLink("Reports", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
+        </div>
     </div>
 </div>
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<div class="row">
+    <div style="margin-left:auto; margin-right:25px; float:right;">
+        <img src="~/Images/CurdOps.jpg" , style="max-width:100%; height:auto;" />
+    </div>
+    <div style="margin-left: 25px; margin-right: auto; float: left; color: #9f4c99; font-size: large;">
+        <h2 style="color: #9f4c99;">Summary:</h2>
+        @*Put this at the top of the div tags incase you dont want it to look cool.*@
+        <br />
+        Total trainers:<br />
+        <label style="font-size: 90px; color: #773873; font-family: Bahnschrift;">48</label>
+    </div>
+    <div style="margin-left: 25px; margin-right: auto; float: left; color: #9f4c99; font-size: large;">
+        <br />
+        Total Assocaites:<br />
+        <label style="font-size: 90px; color: #773873; font-family: Bahnschrift">594</label>
+    </div>
+    <div style="margin-left: 25px; margin-right: auto; float: left; color: #9f4c99; font-size: large;">
+        <br />
+        Total Ongoing Batches:<br />
+        <label style="font-size: 90px; display:inline-block; width:170px; text-align:center; color: #773873; font-family: Bahnschrift;">9</label>
+    </div>
+    <div style="margin-left: 25px; margin-right: auto; float: left; color: #9f4c99; font-size: large;">
+        Select from the following to add and edit:<br /><br />
+        <p><a class="btn btn-default" href="../Home/Index" , style="border-color: #d168c9; border: 7px thin; color: #ad58a8; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; width:200px;">Batch Details &raquo;</a></p>
+        <p><a class="btn btn-default" href="../Home/Index" , style="border-color: #d168c9; border: 7px thin; color: #ad58a8; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; width: 200px;">Training Modules &raquo;</a></p>
+        <p><a class="btn btn-default" href="../Home/Index" , style="border-color: #d168c9; border: 7px thin; color: #ad58a8; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; width: 200px;">Trainer Details &raquo;</a></p>
+        <p><a class="btn btn-default" href="../Home/Index" , style="border-color: #d168c9; border: 7px thin; color: #ad58a8; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; width: 200px;">Associate Details &raquo;</a></p>
+    </div>
+</div>

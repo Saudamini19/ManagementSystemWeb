@@ -2,38 +2,46 @@
     ViewBag.Title = "Contact";
 }
 
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-        <div class="navbar-header">
+        <div class="container">
+            <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
                 </button>
-                @html.actionlink("application name", "index", "home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("NTT Data Talent Development Team", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-        <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@html.actionlink("home", "index", "home")</li>
-                    <li>@html.actionlink("about", "about", "home")</li>
-                    <li>@html.actionlink("contact", "contact", "home")</li>
+                    <li>@Html.ActionLink("Dashboard", "About", "Home")</li>
+                    <li>@Html.ActionLink("Reports", "Contact", "Home")</li>
                 </ul>
-                @html.partial("_loginpartial")
+                @Html.Partial("_LoginPartial")
             </div>
+        </div>
     </div>
 </div>
 
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<div class="row">
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    <div style="margin-left:auto; margin-right:25px; float:right;">
+        <img src="~/Images/GetReports.jpg" , style="max-width:100%; height:auto;" />
+    </div>
+
+    <div style="margin-left: 25px; margin-right: auto; float: left; color: #6c848c; font-size: large; ">
+        <h3 style="font-size:25px">
+            Select from the following to add and edit:<br />
+        </h3>
+        <p style="color: #63787d; font-size:14px;">
+            You can view, update and delete the Batch, Trainer and Associate<br /> details
+            based on Location, unassigned trainers and business units.
+        </p>
+        <h2 style="color: #385a77; ">Generate Reports on:</h2><br />
+        <p><a class="btn btn-default" href="../Home/Index" , style="border-color: #385a66; border: 7px thin; color: #6c848c; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; width: 200px; ">Batch Details &raquo;</a></p>
+        <p><a class="btn btn-default" href="../Home/Index" , style="border-color: #385a66; border: 7px thin; color: #6c848c; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; width: 200px; ">Trainer Details &raquo;</a></p>
+        <p><a class="btn btn-default" href="../Home/Index" , style="border-color: #385a66; border: 7px thin; color: #6c848c; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; width: 200px; ">Associate Details &raquo;</a></p>
+    </div>
+
+</div>

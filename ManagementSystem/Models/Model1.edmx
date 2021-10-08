@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ManagementSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdminDetails">
+          <Key>
+            <PropertyRef Name="uerName" />
+          </Key>
+          <Property Name="uerName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="passTxt" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="AssociateDetails">
+          <Key>
+            <PropertyRef Name="associate_id" />
+          </Key>
+          <Property Name="associate_id" Type="int" Nullable="false" />
+          <Property Name="associate_name" Type="varchar" MaxLength="50" />
+          <Property Name="training_module_id" Type="varchar" MaxLength="11" />
+          <Property Name="doj" Type="date" />
+          <Property Name="loc" Type="varchar" MaxLength="50" />
+          <Property Name="phno" Type="varchar" MaxLength="10" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BatchDetails">
+          <Key>
+            <PropertyRef Name="training_module_id" />
+          </Key>
+          <Property Name="training_module_id" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="business_unit_id" Type="int" />
+          <Property Name="startdate" Type="date" />
+          <Property Name="enddate" Type="date" />
+        </EntityType>
+        <EntityType Name="TrainerDetails">
+          <Key>
+            <PropertyRef Name="trainer_id" />
+          </Key>
+          <Property Name="trainer_id" Type="int" Nullable="false" />
+          <Property Name="trainer_name" Type="varchar" MaxLength="50" />
+          <Property Name="training_module_id" Type="varchar" MaxLength="11" />
+          <Property Name="business_unit_name" Type="varchar" MaxLength="50" />
+          <Property Name="phno" Type="varchar" MaxLength="10" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TrainingModule">
+          <Key>
+            <PropertyRef Name="business_unit_id" />
+          </Key>
+          <Property Name="business_unit_id" Type="int" Nullable="false" />
+          <Property Name="business_unit_name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="ManagementSystemModelStoreContainer">
+          <EntitySet Name="AdminDetails" EntityType="Self.AdminDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AssociateDetails" EntityType="Self.AssociateDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BatchDetails" EntityType="Self.BatchDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrainerDetails" EntityType="Self.TrainerDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrainingModule" EntityType="Self.TrainingModule" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ManagementSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdminDetail">
+          <Key>
+            <PropertyRef Name="uerName" />
+          </Key>
+          <Property Name="uerName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="passTxt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AssociateDetail">
+          <Key>
+            <PropertyRef Name="associate_id" />
+          </Key>
+          <Property Name="associate_id" Type="Int32" Nullable="false" />
+          <Property Name="associate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="training_module_id" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="doj" Type="DateTime" Precision="0" />
+          <Property Name="loc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phno" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BatchDetail">
+          <Key>
+            <PropertyRef Name="training_module_id" />
+          </Key>
+          <Property Name="training_module_id" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="business_unit_id" Type="Int32" />
+          <Property Name="startdate" Type="DateTime" Precision="0" />
+          <Property Name="enddate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="TrainerDetail">
+          <Key>
+            <PropertyRef Name="trainer_id" />
+          </Key>
+          <Property Name="trainer_id" Type="Int32" Nullable="false" />
+          <Property Name="trainer_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="training_module_id" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="business_unit_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phno" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TrainingModule">
+          <Key>
+            <PropertyRef Name="business_unit_id" />
+          </Key>
+          <Property Name="business_unit_id" Type="Int32" Nullable="false" />
+          <Property Name="business_unit_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="ManagementSystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdminDetails" EntityType="Self.AdminDetail" />
+          <EntitySet Name="AssociateDetails" EntityType="Self.AssociateDetail" />
+          <EntitySet Name="BatchDetails" EntityType="Self.BatchDetail" />
+          <EntitySet Name="TrainerDetails" EntityType="Self.TrainerDetail" />
+          <EntitySet Name="TrainingModules" EntityType="Self.TrainingModule" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ManagementSystemModelStoreContainer" CdmEntityContainer="ManagementSystemEntities">
+          <EntitySetMapping Name="AdminDetails">
+            <EntityTypeMapping TypeName="ManagementSystemModel.AdminDetail">
+              <MappingFragment StoreEntitySet="AdminDetails">
+                <ScalarProperty Name="uerName" ColumnName="uerName" />
+                <ScalarProperty Name="passTxt" ColumnName="passTxt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AssociateDetails">
+            <EntityTypeMapping TypeName="ManagementSystemModel.AssociateDetail">
+              <MappingFragment StoreEntitySet="AssociateDetails">
+                <ScalarProperty Name="associate_id" ColumnName="associate_id" />
+                <ScalarProperty Name="associate_name" ColumnName="associate_name" />
+                <ScalarProperty Name="training_module_id" ColumnName="training_module_id" />
+                <ScalarProperty Name="doj" ColumnName="doj" />
+                <ScalarProperty Name="loc" ColumnName="loc" />
+                <ScalarProperty Name="phno" ColumnName="phno" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BatchDetails">
+            <EntityTypeMapping TypeName="ManagementSystemModel.BatchDetail">
+              <MappingFragment StoreEntitySet="BatchDetails">
+                <ScalarProperty Name="training_module_id" ColumnName="training_module_id" />
+                <ScalarProperty Name="business_unit_id" ColumnName="business_unit_id" />
+                <ScalarProperty Name="startdate" ColumnName="startdate" />
+                <ScalarProperty Name="enddate" ColumnName="enddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrainerDetails">
+            <EntityTypeMapping TypeName="ManagementSystemModel.TrainerDetail">
+              <MappingFragment StoreEntitySet="TrainerDetails">
+                <ScalarProperty Name="trainer_id" ColumnName="trainer_id" />
+                <ScalarProperty Name="trainer_name" ColumnName="trainer_name" />
+                <ScalarProperty Name="training_module_id" ColumnName="training_module_id" />
+                <ScalarProperty Name="business_unit_name" ColumnName="business_unit_name" />
+                <ScalarProperty Name="phno" ColumnName="phno" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrainingModules">
+            <EntityTypeMapping TypeName="ManagementSystemModel.TrainingModule">
+              <MappingFragment StoreEntitySet="TrainingModule">
+                <ScalarProperty Name="business_unit_id" ColumnName="business_unit_id" />
+                <ScalarProperty Name="business_unit_name" ColumnName="business_unit_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

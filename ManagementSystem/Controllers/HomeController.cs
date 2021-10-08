@@ -16,15 +16,15 @@ namespace ManagementSystem.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
+            //ViewBag.Message = "Your application description page.";
+            //Dashboard
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
+            //ViewBag.Message = "Your contact page.";
+            //Generating reports
             return View();
         }
     }
