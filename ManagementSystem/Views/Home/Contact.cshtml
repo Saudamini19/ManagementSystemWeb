@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @html.actionlink("application name", "index", "home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+        <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@html.actionlink("home", "index", "home")</li>
+                    <li>@html.actionlink("about", "about", "home")</li>
+                    <li>@html.actionlink("contact", "contact", "home")</li>
+                </ul>
+                @html.partial("_loginpartial")
+            </div>
+    </div>
+</div>
+
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<address>
+    One Microsoft Way<br />
+    Redmond, WA 98052-6399<br />
+    <abbr title="Phone">P:</abbr>
+    425.555.0100
+</address>
+
+<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>
