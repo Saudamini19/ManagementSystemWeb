@@ -7,6 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+
 namespace ManagementSystem.Models
 {
     using System;
@@ -14,7 +20,10 @@ namespace ManagementSystem.Models
     
     public partial class TrainingModule
     {
+        [Key]
+        [Required]
         public int business_unit_id { get; set; }
+        [Required]
         public string business_unit_name { get; set; }
     }
 }

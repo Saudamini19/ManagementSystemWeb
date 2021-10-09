@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -114,12 +120,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -170,8 +170,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AssociateDetailsController.cs" />
+    <Compile Include="Controllers\BatchDetailsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TrainerDetailsController.cs" />
+    <Compile Include="Controllers\TrainingModulesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -288,6 +292,26 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\BatchDetails\Create.cshtml" />
+    <Content Include="Views\BatchDetails\Delete.cshtml" />
+    <Content Include="Views\BatchDetails\Details.cshtml" />
+    <Content Include="Views\BatchDetails\Edit.cshtml" />
+    <Content Include="Views\BatchDetails\Index.cshtml" />
+    <Content Include="Views\TrainingModules\Create.cshtml" />
+    <Content Include="Views\TrainingModules\Delete.cshtml" />
+    <Content Include="Views\TrainingModules\Details.cshtml" />
+    <Content Include="Views\TrainingModules\Edit.cshtml" />
+    <Content Include="Views\TrainingModules\Index.cshtml" />
+    <Content Include="Views\TrainerDetails\Create.cshtml" />
+    <Content Include="Views\TrainerDetails\Delete.cshtml" />
+    <Content Include="Views\TrainerDetails\Details.cshtml" />
+    <Content Include="Views\TrainerDetails\Edit.cshtml" />
+    <Content Include="Views\TrainerDetails\Index.cshtml" />
+    <Content Include="Views\AssociateDetails\Create.cshtml" />
+    <Content Include="Views\AssociateDetails\Delete.cshtml" />
+    <Content Include="Views\AssociateDetails\Details.cshtml" />
+    <Content Include="Views\AssociateDetails\Edit.cshtml" />
+    <Content Include="Views\AssociateDetails\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

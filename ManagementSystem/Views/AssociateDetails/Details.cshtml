@@ -1,0 +1,74 @@
+﻿@model ManagementSystem.Models.AssociateDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AssociateDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Associate ID
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.associate_id)
+        </dd>
+
+        <dt>
+            Associate Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.associate_name)
+        </dd>
+
+        <dt>
+            Training Module ID
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.training_module_id)
+        </dd>
+
+        <dt>
+            Date of Joining
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.doj)
+        </dd>
+
+        <dt>
+            Location
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.loc)
+        </dd>
+
+        <dt>
+            Phone Number
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phno)
+        </dd>
+
+        <dt>
+            Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.associate_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

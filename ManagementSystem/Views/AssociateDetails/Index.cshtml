@@ -1,0 +1,94 @@
+﻿@model IEnumerable<ManagementSystem.Models.AssociateDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    td, th{text-align:center;}
+</style>
+
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("NTT Data Talent Development Team", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Dashboard", "About", "Home")</li>
+                    <li>@Html.ActionLink("Reports", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Associate ID
+        </th>
+        <th>
+            Associate Name
+        </th>
+        <th>
+            Training Module ID
+        </th>
+        <th>
+            Date of Joining
+        </th>
+        <th>
+            Location
+        </th>
+        <th>
+            Phone Number
+        </th>
+        <th>
+            Email
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.associate_id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.associate_name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.training_module_id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.doj)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.loc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.phno)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.email)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.associate_id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.associate_id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.associate_id })
+    </td>
+</tr>
+}
+
+</table>

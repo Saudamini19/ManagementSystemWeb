@@ -6,6 +6,11 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace ManagementSystem.Models
 {
@@ -14,9 +19,14 @@ namespace ManagementSystem.Models
     
     public partial class BatchDetail
     {
+        [Key]
+        [Required]
         public string training_module_id { get; set; }
+        [Required]
         public Nullable<int> business_unit_id { get; set; }
+        [Required]
         public Nullable<System.DateTime> startdate { get; set; }
+        [Required]
         public Nullable<System.DateTime> enddate { get; set; }
     }
 }

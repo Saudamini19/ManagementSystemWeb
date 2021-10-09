@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ManagementSystem.Models.TrainingModule>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    th, td {
+        text-align: center
+    }
+</style>
+
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("NTT Data Talent Development Team", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Dashboard", "About", "Home")</li>
+                    <li>@Html.ActionLink("Reports", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2>Training Modules</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Business Unit ID
+        </th>
+        <th>
+            Business Unit Name
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.business_unit_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.business_unit_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.business_unit_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.business_unit_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.business_unit_id })
+        </td>
+    </tr>
+}
+
+</table>
