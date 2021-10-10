@@ -6,10 +6,6 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
 namespace ManagementSystem.Models
@@ -25,18 +21,18 @@ namespace ManagementSystem.Models
             this.AssociateDetails = new HashSet<AssociateDetail>();
             this.TrainerDetails = new HashSet<TrainerDetail>();
         }
-        [Key]    
-        [Required(ErrorMessage ="This field cannot be blank")]
+
+        [Key]
+        [Required(ErrorMessage = "This field can must be full")]
         public string training_module_id { get; set; }
-        [Required(ErrorMessage = "This field cannot be blank")]
+        [Required(ErrorMessage = "This field can must be full")]
         public Nullable<int> business_unit_id { get; set; }
-        [Required(ErrorMessage = "This field cannot be blank")]
+        [Required(ErrorMessage = "This field can must be full")]
         [DataType(DataType.Date)]
         public Nullable<System.DateTime> startdate { get; set; }
-        [Required(ErrorMessage = "This field cannot be blank")]
+        [Required(ErrorMessage = "This field can must be full")]
         [DataType(DataType.Date)]
         public Nullable<System.DateTime> enddate { get; set; }
-
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AssociateDetail> AssociateDetails { get; set; }

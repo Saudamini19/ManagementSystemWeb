@@ -12,6 +12,20 @@
           <Property Name="uerName" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="passTxt" Type="varchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="AllDetails">
+          <Key>
+            <PropertyRef Name="associate_id" />
+          </Key>
+          <Property Name="associate_id" Type="int" Nullable="false" />
+          <Property Name="associate_name" Type="varchar" MaxLength="30" />
+          <Property Name="associate_training_id" Type="varchar" MaxLength="11" />
+          <Property Name="doj_associate" Type="date" />
+          <Property Name="associate_loc" Type="varchar" MaxLength="50" />
+          <Property Name="training_module_id" Type="varchar" MaxLength="11" />
+          <Property Name="business_unit_name" Type="varchar" MaxLength="50" />
+          <Property Name="startdate" Type="date" />
+          <Property Name="enddate" Type="date" />
+        </EntityType>
         <EntityType Name="AssociateDetails">
           <Key>
             <PropertyRef Name="associate_id" />
@@ -92,6 +106,7 @@ warning 6035: The relationship 'FK__TrainerDe__busin__0697FACD' has columns that
         </Association>
         <EntityContainer Name="ManagementSystemModelStoreContainer">
           <EntitySet Name="AdminDetails" EntityType="Self.AdminDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AllDetails" EntityType="Self.AllDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AssociateDetails" EntityType="Self.AssociateDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BatchDetails" EntityType="Self.BatchDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TrainerDetails" EntityType="Self.TrainerDetails" Schema="dbo" store:Type="Tables" />
@@ -183,6 +198,7 @@ warning 6035: The relationship 'FK__TrainerDe__busin__0697FACD' has columns that
             <End Role="BatchDetail" EntitySet="BatchDetails" />
             <End Role="TrainerDetail" EntitySet="TrainerDetails" />
           </AssociationSet>
+          <EntitySet Name="AllDetails" EntityType="ManagementSystemModel.AllDetail" />
         </EntityContainer>
         <Association Name="FK__Associate__train__7C1A6C5A">
           <End Type="ManagementSystemModel.BatchDetail" Role="BatchDetail" Multiplicity="0..1" />
@@ -220,6 +236,20 @@ warning 6035: The relationship 'FK__TrainerDe__busin__0697FACD' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="AllDetail">
+          <Key>
+            <PropertyRef Name="associate_id" />
+          </Key>
+          <Property Name="associate_id" Type="Int32" Nullable="false" />
+          <Property Name="associate_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="associate_training_id" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="doj_associate" Type="DateTime" Precision="0" />
+          <Property Name="associate_loc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="training_module_id" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="business_unit_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="startdate" Type="DateTime" Precision="0" />
+          <Property Name="enddate" Type="DateTime" Precision="0" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -274,6 +304,21 @@ warning 6035: The relationship 'FK__TrainerDe__busin__0697FACD' has columns that
               <MappingFragment StoreEntitySet="TrainingModule">
                 <ScalarProperty Name="business_unit_id" ColumnName="business_unit_id" />
                 <ScalarProperty Name="business_unit_name" ColumnName="business_unit_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AllDetails">
+            <EntityTypeMapping TypeName="ManagementSystemModel.AllDetail">
+              <MappingFragment StoreEntitySet="AllDetails">
+                <ScalarProperty Name="enddate" ColumnName="enddate" />
+                <ScalarProperty Name="startdate" ColumnName="startdate" />
+                <ScalarProperty Name="business_unit_name" ColumnName="business_unit_name" />
+                <ScalarProperty Name="training_module_id" ColumnName="training_module_id" />
+                <ScalarProperty Name="associate_loc" ColumnName="associate_loc" />
+                <ScalarProperty Name="doj_associate" ColumnName="doj_associate" />
+                <ScalarProperty Name="associate_training_id" ColumnName="associate_training_id" />
+                <ScalarProperty Name="associate_name" ColumnName="associate_name" />
+                <ScalarProperty Name="associate_id" ColumnName="associate_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

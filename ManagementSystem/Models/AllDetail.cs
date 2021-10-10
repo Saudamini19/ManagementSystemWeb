@@ -13,25 +13,29 @@ namespace ManagementSystem.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class AssociateDetail
+    public partial class AllDetail
     {
         [Key]
-        [Required(ErrorMessage = "This field can must be full")]
+        [Required]
         public int associate_id { get; set; }
-        [Required(ErrorMessage = "This field can must be full")]
+        [Required]
         public string associate_name { get; set; }
-        [Required(ErrorMessage = "This field can must be full")]
-        public string training_module_id { get; set; }
-        [Required(ErrorMessage = "This field can must be full")]
+        [Required]
+        public string associate_training_id { get; set; }
+        [Required]
         [DataType(DataType.Date)]
-        public Nullable<System.DateTime> doj { get; set; }
-        [Required(ErrorMessage = "This field can must be full")]
-        public string loc { get; set; }
-        [Required(ErrorMessage = "This field can must be full")]
-        public string phno { get; set; }
-        [Required(ErrorMessage = "This field can must be full")]
-        public string email { get; set; }
-    
-        public virtual BatchDetail BatchDetail { get; set; }
+        public Nullable<System.DateTime> doj_associate { get; set; }
+        [Required]
+        public string associate_loc { get; set; }
+        [Required]
+        public string training_module_id { get; set; }
+        [Required]
+        public string business_unit_name { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        public Nullable<System.DateTime> startdate { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        public Nullable<System.DateTime> enddate { get; set; }
     }
 }

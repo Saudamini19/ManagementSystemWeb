@@ -16,17 +16,17 @@ namespace ManagementSystem.Models
     public partial class TrainerDetail
     {
         [Key]
-        [Required(ErrorMessage = "This field cannot be blank")]
+        [Required(ErrorMessage = "This field can must be full")]
         public int trainer_id { get; set; }
-        [Required(ErrorMessage = "This field cannot be blank")]
+        [Required(ErrorMessage = "This field can must be full")]
         public string trainer_name { get; set; }
-        [Required(ErrorMessage = "This field cannot be blank")]
+        [Required(ErrorMessage = "This field can must be full")]
         public string training_module_id { get; set; }
-        [Required(ErrorMessage = "This field cannot be blank")]
+        [Required(ErrorMessage = "This field can must be full")]
         public string business_unit_name { get; set; }
-        [Required(ErrorMessage = "This field cannot be blank")]
+        [Required(ErrorMessage = "This field can must be full")]
         public string phno { get; set; }
-        [Required(ErrorMessage = "This field cannot be blank")]
+        [Required(ErrorMessage = "This field can must be full")]
         public string email { get; set; }
     
         public virtual BatchDetail BatchDetail { get; set; }

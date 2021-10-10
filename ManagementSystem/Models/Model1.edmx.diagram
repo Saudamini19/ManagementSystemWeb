@@ -13,6 +13,7 @@
         <AssociationConnector Association="ManagementSystemModel.FK__Associate__train__7C1A6C5A" />
         <AssociationConnector Association="ManagementSystemModel.FK__BatchDeta__busin__756D6ECB" />
         <AssociationConnector Association="ManagementSystemModel.FK__TrainerDe__train__7849DB76" />
+        <EntityTypeShape EntityType="ManagementSystemModel.AllDetail" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

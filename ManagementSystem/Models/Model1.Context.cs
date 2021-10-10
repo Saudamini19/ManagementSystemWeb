@@ -30,5 +30,6 @@ namespace ManagementSystem.Models
         public virtual DbSet<BatchDetail> BatchDetails { get; set; }
         public virtual DbSet<TrainerDetail> TrainerDetails { get; set; }
         public virtual DbSet<TrainingModule> TrainingModules { get; set; }
+        public virtual DbSet<AllDetail> AllDetails { get; set; }
     }
 }

@@ -6,12 +6,7 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-
 namespace ManagementSystem.Models
 {
     using System;
@@ -25,9 +20,10 @@ namespace ManagementSystem.Models
             this.BatchDetails = new HashSet<BatchDetail>();
         }
         [Key]
-        [Required(ErrorMessage = "Please enter the Business Unit ID")]
+        [Required(ErrorMessage ="This field can must be full")]
         public int business_unit_id { get; set; }
-        [Required(ErrorMessage ="Please enter the Business Unit Name")]
+        [Required(ErrorMessage = "This field can must be full")]
+
         public string business_unit_name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
