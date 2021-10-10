@@ -45,8 +45,8 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.business_unit_id, "Business Unit ID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10" style="text-align:center;">
-                @Html.EditorFor(model => model.startdate, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="col-md-5">
+                @Html.DropDownList("business_id", (IEnumerable<SelectListItem>)ViewData["business_id"], htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.business_unit_id, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -39,11 +39,13 @@ namespace ManagementSystem.Controllers
         // GET: BatchDetails/Create
         public ActionResult Create()
         {
-            var result = (from r in ob.TrainingModules
-                         select r.business_unit_id);
-            List<SelectListItem> buid = new List<SelectListItem>();
-            buid.Add(new SelectListItem { Text = result.ToString() , Value= result.ToString() }) ;
-            ViewBag.Bid = buid;
+            var modcols = (from r in ob.TrainingModules
+                         select r).ToList();
+            var buidcol = modcols.Select(d => new SelectListItem { Text = d.business_unit_id.ToString(), Value = d.business_unit_name });
+            ViewData["business_id"] = buidcol;
+            //List<SelectListItem> buid = new List<SelectListItem>();
+            //buid.Add(new SelectListItem { Text = result.ToString() , Value= result.ToString() }) ;
+            //ViewBag.Bid = buid;
 
             return View();
         }
