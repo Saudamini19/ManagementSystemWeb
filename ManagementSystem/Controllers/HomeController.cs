@@ -10,6 +10,11 @@ namespace ManagementSystem.Controllers
     //[Authorize]
     public class HomeController : Controller
     {
+        public ActionResult LogOff()
+        {
+            Session.Clear();
+            return RedirectToAction("Login", "AdminDetails");
+        }
         public ActionResult Index()
         {
             return View();

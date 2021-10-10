@@ -1,0 +1,26 @@
+﻿@model ManagementSystem.Models.AdminDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AdminDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.passTxt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.passTxt)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.uerName }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

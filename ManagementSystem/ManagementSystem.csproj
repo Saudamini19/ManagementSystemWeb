@@ -169,20 +169,18 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminDetailsController.cs" />
     <Compile Include="Controllers\AssociateDetailsController.cs" />
     <Compile Include="Controllers\BatchDetailsController.cs" />
     <Compile Include="Controllers\GetAssociateController.cs" />
     <Compile Include="Controllers\GetBatchController.cs" />
     <Compile Include="Controllers\GetTrainerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TrainerDetailsController.cs" />
     <Compile Include="Controllers\TrainingModulesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminDetail.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -196,7 +194,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\login.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -278,26 +276,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\TrainingModules\Create.cshtml" />
     <Content Include="Views\TrainingModules\Delete.cshtml" />
     <Content Include="Views\TrainingModules\Details.cshtml" />
@@ -321,6 +300,12 @@
     <Content Include="Views\GetAssociate\Index.cshtml" />
     <Content Include="Views\GetBatch\Index.cshtml" />
     <Content Include="Views\GetTrainer\Index.cshtml" />
+    <Content Include="Views\AdminDetails\Create.cshtml" />
+    <Content Include="Views\AdminDetails\Delete.cshtml" />
+    <Content Include="Views\AdminDetails\Details.cshtml" />
+    <Content Include="Views\AdminDetails\Edit.cshtml" />
+    <Content Include="Views\AdminDetails\Index.cshtml" />
+    <Content Include="Views\AdminDetails\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
