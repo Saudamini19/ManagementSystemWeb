@@ -57,13 +57,13 @@
         @Html.DisplayFor(modelItem => item.training_module_id)
     </td>
     <td>
+        @Html.DisplayFor(modelItem => item.TrainingModule.business_unit_name)
+    </td>
+    <td>
         @Html.DisplayFor(modelItem => item.startdate)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.enddate)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.TrainingModule.business_unit_name)
     </td>
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.training_module_id }) |
