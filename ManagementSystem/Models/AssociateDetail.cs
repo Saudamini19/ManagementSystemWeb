@@ -6,6 +6,8 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+using System.ComponentModel.DataAnnotations;
+
 
 namespace ManagementSystem.Models
 {
@@ -14,12 +16,23 @@ namespace ManagementSystem.Models
     
     public partial class AssociateDetail
     {
+        [Key]
+        [Required(ErrorMessage = "This field cannot be blank")]
         public int associate_id { get; set; }
+        [Required(ErrorMessage = "This field cannot be blank")]
         public string associate_name { get; set; }
+        [Required(ErrorMessage = "This field cannot be blank")]
         public string training_module_id { get; set; }
+        [Required(ErrorMessage = "This field cannot be blank")]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> doj { get; set; }
+        [Required(ErrorMessage = "This field cannot be blank")]
         public string loc { get; set; }
+        [Required(ErrorMessage = "This field cannot be blank")]
         public string phno { get; set; }
+        [Required(ErrorMessage = "This field cannot be blank")]
         public string email { get; set; }
+    
+        public virtual BatchDetail BatchDetail { get; set; }
     }
 }

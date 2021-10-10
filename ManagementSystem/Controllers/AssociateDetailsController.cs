@@ -17,7 +17,8 @@ namespace ManagementSystem.Controllers
         // GET: AssociateDetails
         public ActionResult Index()
         {
-            return View(db.AssociateDetails.ToList());
+            var associateDetails = db.AssociateDetails.Include(a => a.BatchDetail);
+            return View(associateDetails.ToList());
         }
 
         // GET: AssociateDetails/Details/5
@@ -38,6 +39,7 @@ namespace ManagementSystem.Controllers
         // GET: AssociateDetails/Create
         public ActionResult Create()
         {
+            ViewBag.training_module_id = new SelectList(db.BatchDetails, "training_module_id", "training_module_id");
             return View();
         }
 
@@ -55,6 +57,7 @@ namespace ManagementSystem.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.training_module_id = new SelectList(db.BatchDetails, "training_module_id", "training_module_id", associateDetail.training_module_id);
             return View(associateDetail);
         }
 
@@ -70,6 +73,7 @@ namespace ManagementSystem.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.training_module_id = new SelectList(db.BatchDetails, "training_module_id", "training_module_id", associateDetail.training_module_id);
             return View(associateDetail);
         }
 
@@ -86,6 +90,7 @@ namespace ManagementSystem.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.training_module_id = new SelectList(db.BatchDetails, "training_module_id", "training_module_id", associateDetail.training_module_id);
             return View(associateDetail);
         }
 

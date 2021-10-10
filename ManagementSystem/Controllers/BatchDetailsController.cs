@@ -12,13 +12,13 @@ namespace ManagementSystem.Controllers
 {
     public class BatchDetailsController : Controller
     {
-        ManagementSystemEntities ob = new ManagementSystemEntities();
         private ManagementSystemEntities db = new ManagementSystemEntities();
 
         // GET: BatchDetails
         public ActionResult Index()
         {
-            return View(db.BatchDetails.ToList());
+            var batchDetails = db.BatchDetails.Include(b => b.TrainingModule);
+            return View(batchDetails.ToList());
         }
 
         // GET: BatchDetails/Details/5
@@ -39,14 +39,7 @@ namespace ManagementSystem.Controllers
         // GET: BatchDetails/Create
         public ActionResult Create()
         {
-            var modcols = (from r in ob.TrainingModules
-                         select r).ToList();
-            var buidcol = modcols.Select(d => new SelectListItem { Text = d.business_unit_id.ToString(), Value = d.business_unit_name });
-            ViewData["business_id"] = buidcol;
-            //List<SelectListItem> buid = new List<SelectListItem>();
-            //buid.Add(new SelectListItem { Text = result.ToString() , Value= result.ToString() }) ;
-            //ViewBag.Bid = buid;
-
+            ViewBag.business_unit_id = new SelectList(db.TrainingModules, "business_unit_id", "business_unit_name");
             return View();
         }
 
@@ -64,6 +57,7 @@ namespace ManagementSystem.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.business_unit_id = new SelectList(db.TrainingModules, "business_unit_id", "business_unit_name", batchDetail.business_unit_id);
             return View(batchDetail);
         }
 
@@ -79,6 +73,7 @@ namespace ManagementSystem.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.business_unit_id = new SelectList(db.TrainingModules, "business_unit_id", "business_unit_name", batchDetail.business_unit_id);
             return View(batchDetail);
         }
 
@@ -95,6 +90,7 @@ namespace ManagementSystem.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.business_unit_id = new SelectList(db.TrainingModules, "business_unit_id", "business_unit_name", batchDetail.business_unit_id);
             return View(batchDetail);
         }
 

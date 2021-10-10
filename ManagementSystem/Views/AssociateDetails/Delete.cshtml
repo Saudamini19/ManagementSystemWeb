@@ -3,7 +3,11 @@
 @{
     ViewBag.Title = "Delete";
 }
-
+<style>
+    dd, dt{
+        text-align:center;
+    }
+</style>
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="container">
@@ -39,9 +43,8 @@
         <dd>
             @Html.DisplayFor(model => model.associate_id)
         </dd>
-
         <dt>
-Associate Name
+            Associate Name
         </dt>
 
         <dd>
@@ -49,15 +52,15 @@ Associate Name
         </dd>
 
         <dt>
-Training Module ID
+            Training Module ID
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.training_module_id)
+            @Html.DisplayFor(model => model.BatchDetail.training_module_id)
         </dd>
 
         <dt>
-Date of Joining
+            Date of Joining
         </dt>
 
         <dd>
@@ -65,7 +68,7 @@ Date of Joining
         </dd>
 
         <dt>
-Location
+            Location
         </dt>
 
         <dd>
@@ -73,7 +76,7 @@ Location
         </dd>
 
         <dt>
-Phone Number
+            Phone Number
         </dt>
 
         <dd>
@@ -81,7 +84,7 @@ Phone Number
         </dd>
 
         <dt>
-Email
+            Email
         </dt>
 
         <dd>

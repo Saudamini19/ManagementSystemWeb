@@ -3,13 +3,11 @@
 @{
     ViewBag.Title = "Index";
 }
-
 <style>
-    th, td {
+    td, th {
         text-align: center
     }
 </style>
-
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="container">
@@ -30,8 +28,7 @@
         </div>
     </div>
 </div>
-
-<h2>Training Modules</h2>
+<h2>Training Module Details</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -47,20 +44,21 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.business_unit_id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.business_unit_name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.business_unit_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.business_unit_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.business_unit_id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.business_unit_id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.business_unit_name)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.business_unit_id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.business_unit_id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.business_unit_id })
+    </td>
+</tr>
+    }
 
 </table>

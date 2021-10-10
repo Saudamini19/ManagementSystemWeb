@@ -4,12 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="88234c6702794695bf0fd7abeadd84a5" Name="Diagram1">
+      <Diagram DiagramId="88234c6702794695bf0fd7abeadd84a5" Name="Diagram1" ZoomLevel="65">
         <EntityTypeShape EntityType="ManagementSystemModel.AdminDetail" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManagementSystemModel.AssociateDetail" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManagementSystemModel.BatchDetail" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManagementSystemModel.TrainerDetail" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ManagementSystemModel.TrainingModule" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManagementSystemModel.AssociateDetail" Width="1.875" PointX="6.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManagementSystemModel.BatchDetail" Width="1.5" PointX="10.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManagementSystemModel.TrainerDetail" Width="2.25" PointX="6.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManagementSystemModel.TrainingModule" Width="2.375" PointX="10.375" PointY="5.875" IsExpanded="true" />
+        <AssociationConnector Association="ManagementSystemModel.FK__Associate__train__7C1A6C5A" />
+        <AssociationConnector Association="ManagementSystemModel.FK__BatchDeta__busin__756D6ECB" />
+        <AssociationConnector Association="ManagementSystemModel.FK__TrainerDe__train__7849DB76" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

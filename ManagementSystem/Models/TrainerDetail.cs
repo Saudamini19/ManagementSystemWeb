@@ -6,10 +6,6 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
 namespace ManagementSystem.Models
@@ -20,17 +16,19 @@ namespace ManagementSystem.Models
     public partial class TrainerDetail
     {
         [Key]
-        [Required]
+        [Required(ErrorMessage = "This field cannot be blank")]
         public int trainer_id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "This field cannot be blank")]
         public string trainer_name { get; set; }
-        [Required]
+        [Required(ErrorMessage = "This field cannot be blank")]
         public string training_module_id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "This field cannot be blank")]
         public string business_unit_name { get; set; }
-        [Required]
+        [Required(ErrorMessage = "This field cannot be blank")]
         public string phno { get; set; }
-        [Required]
+        [Required(ErrorMessage = "This field cannot be blank")]
         public string email { get; set; }
+    
+        public virtual BatchDetail BatchDetail { get; set; }
     }
 }

@@ -3,6 +3,11 @@
 @{
     ViewBag.Title = "Details";
 }
+<style>
+    dt, dd {
+        text-align: center;
+    }
+</style>
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="container">
@@ -31,30 +36,28 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-Trainer ID
+            Trainer ID
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.trainer_id)
         </dd>
+
         <dt>
-Trainer Name
+            Trainer Name
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.trainer_name)
         </dd>
-
         <dt>
-Training Module ID
+            Training Module ID
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.training_module_id)
+            @Html.DisplayFor(model => model.BatchDetail.training_module_id)
         </dd>
-
         <dt>
-Business Unit Name
+            Business Unit Name
         </dt>
 
         <dd>
@@ -62,7 +65,7 @@ Business Unit Name
         </dd>
 
         <dt>
-Phone numbers
+            Phone Number
         </dt>
 
         <dd>
@@ -70,7 +73,7 @@ Phone numbers
         </dd>
 
         <dt>
-Email ID
+            Email
         </dt>
 
         <dd>

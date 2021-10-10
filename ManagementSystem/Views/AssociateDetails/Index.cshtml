@@ -5,7 +5,9 @@
 }
 
 <style>
-    td, th{text-align:center;}
+    td, th{
+        text-align:center;
+    }
 </style>
 
 <div class="navbar navbar-default navbar-fixed-top">
@@ -29,7 +31,7 @@
     </div>
 </div>
 
-<h2>Index</h2>
+<h2>Associate Details</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -69,7 +71,7 @@
         @Html.DisplayFor(modelItem => item.associate_name)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.training_module_id)
+        @Html.DisplayFor(modelItem => item.BatchDetail.training_module_id)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.doj)

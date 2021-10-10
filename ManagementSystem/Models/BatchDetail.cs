@@ -19,14 +19,29 @@ namespace ManagementSystem.Models
     
     public partial class BatchDetail
     {
-        [Key]
-        [Required]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public BatchDetail()
+        {
+            this.AssociateDetails = new HashSet<AssociateDetail>();
+            this.TrainerDetails = new HashSet<TrainerDetail>();
+        }
+        [Key]    
+        [Required(ErrorMessage ="This field cannot be blank")]
         public string training_module_id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "This field cannot be blank")]
         public Nullable<int> business_unit_id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "This field cannot be blank")]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> startdate { get; set; }
-        [Required]
+        [Required(ErrorMessage = "This field cannot be blank")]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> enddate { get; set; }
+
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AssociateDetail> AssociateDetails { get; set; }
+        public virtual TrainingModule TrainingModule { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TrainerDetail> TrainerDetails { get; set; }
     }
 }

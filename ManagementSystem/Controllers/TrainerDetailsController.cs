@@ -17,7 +17,8 @@ namespace ManagementSystem.Controllers
         // GET: TrainerDetails
         public ActionResult Index()
         {
-            return View(db.TrainerDetails.ToList());
+            var trainerDetails = db.TrainerDetails.Include(t => t.BatchDetail);
+            return View(trainerDetails.ToList());
         }
 
         // GET: TrainerDetails/Details/5
@@ -38,6 +39,7 @@ namespace ManagementSystem.Controllers
         // GET: TrainerDetails/Create
         public ActionResult Create()
         {
+            ViewBag.training_module_id = new SelectList(db.BatchDetails, "training_module_id", "training_module_id");
             return View();
         }
 
@@ -55,6 +57,7 @@ namespace ManagementSystem.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.training_module_id = new SelectList(db.BatchDetails, "training_module_id", "training_module_id", trainerDetail.training_module_id);
             return View(trainerDetail);
         }
 
@@ -70,6 +73,7 @@ namespace ManagementSystem.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.training_module_id = new SelectList(db.BatchDetails, "training_module_id", "training_module_id", trainerDetail.training_module_id);
             return View(trainerDetail);
         }
 
@@ -86,6 +90,7 @@ namespace ManagementSystem.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.training_module_id = new SelectList(db.BatchDetails, "training_module_id", "training_module_id", trainerDetail.training_module_id);
             return View(trainerDetail);
         }
 

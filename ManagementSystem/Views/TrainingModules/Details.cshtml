@@ -3,11 +3,8 @@
 @{
     ViewBag.Title = "Details";
 }
-
 <style>
-    dt, dd {
-        text-align: center
-    }
+    dt, dd{text-align:center}
 </style>
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -29,26 +26,27 @@
         </div>
     </div>
 </div>
+
 <h2>Details</h2>
 
 <div>
     <h4>TrainingModule</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            Business Unit ID
-        </dt>
+            <dt>
+                Business Unit ID
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.business_unit_id)
-        </dd>
-        <dt>
-            Business Unit Name
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.business_unit_id)
+            </dd>
+            <dt>
+                Business Unit Name
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.business_unit_name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.business_unit_name)
+            </dd>
 
     </dl>
 </div>

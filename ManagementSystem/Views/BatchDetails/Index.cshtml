@@ -3,12 +3,8 @@
 @{
     ViewBag.Title = "Index";
 }
-
 <style>
-    th{
-        text-align:center;
-    }
-    td{
+    th, td{
         text-align:center;
     }
 </style>
@@ -33,10 +29,9 @@
         </div>
     </div>
 </div>
-
 <h2>Batch Details</h2>
 
-<p style="color: #9f4c99;">
+<p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
@@ -45,7 +40,7 @@
             Training Module ID
         </th>
         <th>
-            Business Unit ID
+            Business Unit Name
         </th>
         <th>
             Start Date
@@ -56,27 +51,26 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model) 
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.training_module_id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.business_unit_id)
-            </td>
-            <td>
-                @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.startdate))
-            </td>
-            <td>
-                @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.enddate))
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.training_module_id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.training_module_id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.training_module_id })
-            </td>
-        </tr>
-     }
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.training_module_id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.startdate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.enddate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TrainingModule.business_unit_name)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.training_module_id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.training_module_id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.training_module_id })
+    </td>
+</tr>
+}
 
 </table>
