@@ -1,0 +1,1729 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="10.0" Name="My FxCop Project">
+ <ProjectOptions>
+  <SharedProject>True</SharedProject>
+  <Stylesheet Apply="False">$(FxCopDir)\Xml\FxCopReport.xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded, Good, Noise" NewOnly="False" />
+   <Report Status="Active, Good, Noise" NewOnly="False" />
+  </SaveMessages>
+  <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+  <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+  <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+  <SourceLookup>True</SourceLookup>
+  <AnalysisExceptionsThreshold>10</AnalysisExceptionsThreshold>
+  <RuleExceptionsThreshold>1</RuleExceptionsThreshold>
+  <Spelling Locale="en-US" />
+  <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+  <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+  <SearchGlobalAssemblyCache>False</SearchGlobalAssemblyCache>
+  <DeadlockDetectionTimeout>120</DeadlockDetectionTimeout>
+  <IgnoreGeneratedCode>False</IgnoreGeneratedCode>
+ </ProjectOptions>
+ <Targets>
+  <Target Name="$(ProjectDir)/ManagementSystem/bin/System.Web.Mvc.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/ManagementSystem/obj/Debug/ManagementSystem.dll" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <Rules>
+  <RuleFiles>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="False" AllRulesEnabled="False" />
+   <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="False" AllRulesEnabled="False" />
+   <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="False" AllRulesEnabled="False" />
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="False" AllRulesEnabled="False" />
+   <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="False" AllRulesEnabled="False" />
+   <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="False" AllRulesEnabled="False" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityTransparencyRules.dll" Enabled="False" AllRulesEnabled="False" />
+   <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="False" AllRulesEnabled="False" />
+  </RuleFiles>
+  <Groups />
+  <Settings />
+ </Rules>
+ <FxCopReport Version="10.0">
+  <Namespaces>
+   <Namespace Name="ManagementSystem">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2021-10-10 20:29:02Z">
+      <Issue>
+       <Item>ManagementSystem</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="System.Web.Mvc.Ajax">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2021-10-10 20:29:02Z">
+      <Issue>
+       <Item>System.Web.Mvc.Ajax</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="System.Web.Mvc.Filters">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2021-10-10 20:29:02Z">
+      <Issue>
+       <Item>System.Web.Mvc.Filters</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="System.Web.Mvc.Razor">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2021-10-10 20:29:02Z">
+      <Issue>
+       <Item>System.Web.Mvc.Razor</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+  </Namespaces>
+  <Targets>
+   <Target Name="$(ProjectDir)/ManagementSystem/bin/System.Web.Mvc.dll">
+    <Modules>
+     <Module Name="system.web.mvc.dll">
+      <Namespaces>
+       <Namespace Name="System.Web.Mvc">
+        <Types>
+         <Type Name="AcceptVerbsAttribute">
+          <Messages>
+           <Message TypeName="DefineAccessorsForAttributeArguments" Category="Microsoft.Design" CheckId="CA1019" Created="2021-10-10 20:29:02Z">
+            <Issue>
+             <Item>'verbs'</Item>
+             <Item>'AcceptVerbsAttribute'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="ActionDescriptor">
+          <Members>
+           <Member Name="#GetSelectors()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'ActionDescriptor.GetSelectors()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#UniqueId">
+            <Accessors>
+             <Accessor Name="#get_UniqueId()">
+              <Messages>
+               <Message TypeName="SealMethodsThatSatisfyPrivateInterfaces" Category="Microsoft.Security" CheckId="CA2119" Created="2021-10-10 20:29:02Z">
+                <Issue>
+                 <Item>'ActionDescriptor.UniqueId.get()'</Item>
+                 <Item>IUniquelyIdentifiable</Item>
+                 <Item>'ActionDescriptor'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="AreaRegistrationContext">
+          <Members>
+           <Member Name="#MapRoute(System.String,System.String)">
+            <Messages>
+             <Message Id="1#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'AreaRegistrationContext.MapRoute(string, string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#MapRoute(System.String,System.String,System.Object)">
+            <Messages>
+             <Message Id="1#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'AreaRegistrationContext.MapRoute(string, string, object)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#MapRoute(System.String,System.String,System.Object,System.Object)">
+            <Messages>
+             <Message Id="1#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'AreaRegistrationContext.MapRoute(string, string, object, object)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#MapRoute(System.String,System.String,System.Object,System.Object,System.String[])">
+            <Messages>
+             <Message Id="1#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'AreaRegistrationContext.MapRoute(string, string, object, object, string[])'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#MapRoute(System.String,System.String,System.Object,System.String[])">
+            <Messages>
+             <Message Id="1#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'AreaRegistrationContext.MapRoute(string, string, object, string[])'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#MapRoute(System.String,System.String,System.String[])">
+            <Messages>
+             <Message Id="1#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'AreaRegistrationContext.MapRoute(string, string, string[])'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Controller">
+          <Members>
+           <Member Name="#Redirect(System.String)">
+            <Messages>
+             <Message Id="0#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'Controller.Redirect(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RedirectPermanent(System.String)">
+            <Messages>
+             <Message Id="0#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'Controller.RedirectPermanent(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ControllerBuilder">
+          <Members>
+           <Member Name="#GetControllerFactory()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2021-10-10 20:29:02Z">
+              <Issue Certainty="50">
+               <Item>'ControllerBuilder.GetControllerFactory()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ControllerDescriptor">
+          <Members>
+           <Member Name="#UniqueId">
+            <Accessors>
+             <Accessor Name="#get_UniqueId()">
+              <Messages>
+               <Message TypeName="SealMethodsThatSatisfyPrivateInterfaces" Category="Microsoft.Security" CheckId="CA2119" Created="2021-10-10 20:29:02Z">
+                <Issue>
+                 <Item>'ControllerDescriptor.UniqueId.get()'</Item>
+                 <Item>IUniquelyIdentifiable</Item>
+                 <Item>'ControllerDescriptor'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="CustomModelBinderAttribute">
+          <Members>
+           <Member Name="#GetBinder()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2021-10-10 20:29:02Z">
+              <Issue Certainty="50">
+               <Item>'CustomModelBinderAttribute.GetBinder()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DefaultModelBinder">
+          <Members>
+           <Member Name="#ConvertProviderResult(System.Web.Mvc.ModelStateDictionary,System.String,System.Web.Mvc.ValueProviderResult,System.Type)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'DefaultModelBinder.ConvertProviderResult(ModelStateDictionary, string, ValueProviderResult, Type)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SetProperty(System.Web.Mvc.ControllerContext,System.Web.Mvc.ModelBindingContext,System.ComponentModel.PropertyDescriptor,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'DefaultModelBinder.SetProperty(ControllerContext, ModelBindingContext, PropertyDescriptor, object)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DefaultViewLocationCache">
+          <Members>
+           <Member Name="#Null">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'DefaultViewLocationCache.Null'</Item>
+               <Item>'IViewLocationCache'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DependencyResolver">
+          <Members>
+           <Member Name="#InnerSetResolver(System.Func`2&lt;System.Type,System.Object&gt;,System.Func`2&lt;System.Type,System.Collections.Generic.IEnumerable`1&lt;System.Object&gt;&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'DependencyResolver.InnerSetResolver(Func&lt;Type, object&gt;, Func&lt;Type, IEnumerable&lt;object&gt;&gt;)'</Item>
+               <Item>'Func&lt;Type, IEnumerable&lt;object&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SetResolver(System.Func`2&lt;System.Type,System.Object&gt;,System.Func`2&lt;System.Type,System.Collections.Generic.IEnumerable`1&lt;System.Object&gt;&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'DependencyResolver.SetResolver(Func&lt;Type, object&gt;, Func&lt;Type, IEnumerable&lt;object&gt;&gt;)'</Item>
+               <Item>'Func&lt;Type, IEnumerable&lt;object&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DependencyResolver+DefaultDependencyResolver">
+          <Members>
+           <Member Name="#GetService(System.Type)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'DependencyResolver.DefaultDependencyResolver.GetService(Type)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DependencyResolver+DelegateBasedDependencyResolver">
+          <Members>
+           <Member Name="#GetService(System.Type)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'DependencyResolver.DelegateBasedDependencyResolver.GetService(Type)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="FormCollection">
+          <Messages>
+           <Message TypeName="ICollectionImplementationsHaveStronglyTypedMembers" Category="Microsoft.Design" CheckId="CA1035" Created="2021-10-10 20:29:02Z">
+            <Issue>
+             <Item>'FormCollection'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="FormContext">
+          <Members>
+           <Member Name="#GetJsonValidationMetadata()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2021-10-10 20:29:02Z">
+              <Issue Certainty="50">
+               <Item>'FormContext.GetJsonValidationMetadata()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ModelMetadata">
+          <Members>
+           <Member Name="#FromLambdaExpression`2(System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Web.Mvc.ViewDataDictionary`1&lt;!!0&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'ModelMetadata.FromLambdaExpression&lt;TParameter, TValue&gt;(Expression&lt;Func&lt;TParameter, TValue&gt;&gt;, ViewDataDictionary&lt;TParameter&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TParameter, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetDisplayName()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'ModelMetadata.GetDisplayName()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetSimpleDisplayText()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'ModelMetadata.GetSimpleDisplayText()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ModelValidator">
+          <Members>
+           <Member Name="#GetClientValidationRules()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2021-10-10 20:29:02Z">
+              <Issue Certainty="50">
+               <Item>'ModelValidator.GetClientValidationRules()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="MvcHtmlString">
+          <Members>
+           <Member Name="#Empty">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'MvcHtmlString.Empty'</Item>
+               <Item>'MvcHtmlString'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ReaderWriterCache`2">
+          <Messages>
+           <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Created="2021-10-10 20:29:02Z" FixCategory="NonBreaking">
+            <Issue Name="NonBreaking">
+             <Item>'ReaderWriterCache&lt;TKey, TValue&gt;'</Item>
+             <Item>'ReaderWriterLockSlim'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="RedirectResult">
+          <Members>
+           <Member Name="#.ctor(System.String)">
+            <Messages>
+             <Message Id="0#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'RedirectResult.RedirectResult(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#.ctor(System.String,System.Boolean)">
+            <Messages>
+             <Message Id="0#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'RedirectResult.RedirectResult(string, bool)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Url">
+            <Messages>
+             <Message TypeName="UriPropertiesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1056" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'RedirectResult.Url'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="RemoteAttribute">
+          <Messages>
+           <Message TypeName="DefineAccessorsForAttributeArguments" Category="Microsoft.Design" CheckId="CA1019" Created="2021-10-10 20:29:02Z">
+            <Issue>
+             <Item>'action'</Item>
+             <Item>'RemoteAttribute'</Item>
+            </Issue>
+            <Issue>
+             <Item>'areaName'</Item>
+             <Item>'RemoteAttribute'</Item>
+            </Issue>
+            <Issue>
+             <Item>'areaReference'</Item>
+             <Item>'RemoteAttribute'</Item>
+            </Issue>
+            <Issue>
+             <Item>'controller'</Item>
+             <Item>'RemoteAttribute'</Item>
+            </Issue>
+            <Issue Name="IncreaseVisibility">
+             <Item>'RemoteAttribute.RouteName'</Item>
+             <Item>'routeName'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#GetUrl(System.Web.Mvc.ControllerContext)">
+            <Messages>
+             <Message TypeName="UriReturnValuesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1055" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'RemoteAttribute.GetUrl(ControllerContext)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="RouteCollectionExtensions">
+          <Members>
+           <Member Name="#IgnoreRoute(System.Web.Routing.RouteCollection,System.String)">
+            <Messages>
+             <Message Id="1#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'RouteCollectionExtensions.IgnoreRoute(this RouteCollection, string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#IgnoreRoute(System.Web.Routing.RouteCollection,System.String,System.Object)">
+            <Messages>
+             <Message Id="1#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'RouteCollectionExtensions.IgnoreRoute(this RouteCollection, string, object)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#MapRoute(System.Web.Routing.RouteCollection,System.String,System.String)">
+            <Messages>
+             <Message Id="2#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'RouteCollectionExtensions.MapRoute(this RouteCollection, string, string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#MapRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Object)">
+            <Messages>
+             <Message Id="2#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'RouteCollectionExtensions.MapRoute(this RouteCollection, string, string, object)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#MapRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Object,System.Object)">
+            <Messages>
+             <Message Id="2#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'RouteCollectionExtensions.MapRoute(this RouteCollection, string, string, object, object)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#MapRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Object,System.Object,System.String[])">
+            <Messages>
+             <Message Id="2#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'RouteCollectionExtensions.MapRoute(this RouteCollection, string, string, object, object, string[])'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#MapRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Object,System.String[])">
+            <Messages>
+             <Message Id="2#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'RouteCollectionExtensions.MapRoute(this RouteCollection, string, string, object, string[])'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#MapRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.String[])">
+            <Messages>
+             <Message Id="2#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'RouteCollectionExtensions.MapRoute(this RouteCollection, string, string, string[])'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TempDataDictionary">
+          <Members>
+           <Member Name="#System.Collections.Generic.ICollection`1&lt;System.Collections.Generic.KeyValuePair`2&lt;System.String,System.Object&gt;&gt;.Contains(System.Collections.Generic.KeyValuePair`2&lt;System.String,System.Object&gt;)">
+            <Messages>
+             <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'TempDataDictionary'</Item>
+               <Item>'ICollection&lt;KeyValuePair&lt;string, object&gt;&gt;.Contains(KeyValuePair&lt;string, object&gt;)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#System.Collections.Generic.ICollection`1&lt;System.Collections.Generic.KeyValuePair`2&lt;System.String,System.Object&gt;&gt;.CopyTo(System.Collections.Generic.KeyValuePair`2&lt;System.String,System.Object&gt;[],System.Int32)">
+            <Messages>
+             <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'TempDataDictionary'</Item>
+               <Item>'ICollection&lt;KeyValuePair&lt;string, object&gt;&gt;.CopyTo(KeyValuePair&lt;string, object&gt;[], int)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#System.Collections.Generic.ICollection`1&lt;System.Collections.Generic.KeyValuePair`2&lt;System.String,System.Object&gt;&gt;.IsReadOnly">
+            <Accessors>
+             <Accessor Name="#System.Collections.Generic.ICollection`1&lt;System.Collections.Generic.KeyValuePair`2&lt;System.String,System.Object&gt;&gt;.get_IsReadOnly()">
+              <Messages>
+               <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Created="2021-10-10 20:29:02Z">
+                <Issue>
+                 <Item>'TempDataDictionary'</Item>
+                 <Item>'ICollection&lt;KeyValuePair&lt;string, object&gt;&gt;.IsReadOnly.get()'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TypeCacheUtil">
+          <Members>
+           <Member Name="#ReadTypesFromCache(System.String,System.Predicate`1&lt;System.Type&gt;,System.Web.Mvc.IBuildManager,System.Web.Mvc.TypeCacheSerializer)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'TypeCacheUtil.ReadTypesFromCache(string, Predicate&lt;Type&gt;, IBuildManager, TypeCacheSerializer)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SaveTypesToCache(System.String,System.Collections.Generic.IList`1&lt;System.Type&gt;,System.Web.Mvc.IBuildManager,System.Web.Mvc.TypeCacheSerializer)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'TypeCacheUtil.SaveTypesToCache(string, IList&lt;Type&gt;, IBuildManager, TypeCacheSerializer)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="UrlHelper">
+          <Members>
+           <Member Name="#Encode(System.String)">
+            <Messages>
+             <Message Id="0#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'UrlHelper.Encode(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GenerateContentUrl(System.String,System.Web.HttpContextBase)">
+            <Messages>
+             <Message TypeName="UriReturnValuesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1055" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'UrlHelper.GenerateContentUrl(string, HttpContextBase)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GenerateUrl(System.String,System.String,System.String,System.String,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteCollection,System.Web.Routing.RequestContext,System.Boolean)">
+            <Messages>
+             <Message TypeName="UriReturnValuesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1055" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'UrlHelper.GenerateUrl(string, string, string, string, string, string, RouteValueDictionary, RouteCollection, RequestContext, bool)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GenerateUrl(System.String,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteCollection,System.Web.Routing.RequestContext,System.Boolean)">
+            <Messages>
+             <Message TypeName="UriReturnValuesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1055" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'UrlHelper.GenerateUrl(string, string, string, RouteValueDictionary, RouteCollection, RequestContext, bool)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#HttpRouteUrl(System.String,System.Object)">
+            <Messages>
+             <Message TypeName="UriReturnValuesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1055" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'UrlHelper.HttpRouteUrl(string, object)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#HttpRouteUrl(System.String,System.Web.Routing.RouteValueDictionary)">
+            <Messages>
+             <Message TypeName="UriReturnValuesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1055" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'UrlHelper.HttpRouteUrl(string, RouteValueDictionary)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#IsLocalUrl(System.String)">
+            <Messages>
+             <Message Id="0#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'url'</Item>
+               <Item>'UrlHelper.IsLocalUrl(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RouteUrl(System.Object)">
+            <Messages>
+             <Message TypeName="UriReturnValuesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1055" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'UrlHelper.RouteUrl(object)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RouteUrl(System.String)">
+            <Messages>
+             <Message TypeName="UriReturnValuesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1055" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'UrlHelper.RouteUrl(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RouteUrl(System.String,System.Object)">
+            <Messages>
+             <Message TypeName="UriReturnValuesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1055" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'UrlHelper.RouteUrl(string, object)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RouteUrl(System.String,System.Object,System.String)">
+            <Messages>
+             <Message TypeName="UriReturnValuesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1055" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'UrlHelper.RouteUrl(string, object, string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RouteUrl(System.String,System.Web.Routing.RouteValueDictionary)">
+            <Messages>
+             <Message TypeName="UriReturnValuesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1055" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'UrlHelper.RouteUrl(string, RouteValueDictionary)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RouteUrl(System.String,System.Web.Routing.RouteValueDictionary,System.String,System.String)">
+            <Messages>
+             <Message TypeName="UriReturnValuesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1055" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'UrlHelper.RouteUrl(string, RouteValueDictionary, string, string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RouteUrl(System.Web.Routing.RouteValueDictionary)">
+            <Messages>
+             <Message TypeName="UriReturnValuesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1055" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'UrlHelper.RouteUrl(RouteValueDictionary)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="UrlParameter">
+          <Members>
+           <Member Name="#Optional">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'UrlParameter.Optional'</Item>
+               <Item>'UrlParameter'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ValueProviderDictionary">
+          <Members>
+           <Member Name="#System.Web.Mvc.IValueProvider.ContainsPrefix(System.String)">
+            <Messages>
+             <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'ValueProviderDictionary'</Item>
+               <Item>'IValueProvider.ContainsPrefix(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#System.Web.Mvc.IValueProvider.GetValue(System.String)">
+            <Messages>
+             <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'ValueProviderDictionary'</Item>
+               <Item>'IValueProvider.GetValue(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ValueProviderResult">
+          <Members>
+           <Member Name="#ConvertSimpleType(System.Globalization.CultureInfo,System.Object,System.Type)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'ValueProviderResult.ConvertSimpleType(CultureInfo, object, Type)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="System.Web.Mvc.Ajax">
+        <Types>
+         <Type Name="AjaxOptions">
+          <Members>
+           <Member Name="#Url">
+            <Messages>
+             <Message TypeName="UriPropertiesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1056" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'AjaxOptions.Url'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="System.Web.Mvc.Async">
+        <Types>
+         <Type Name="AsyncResultWrapper+WrappedAsyncResultBase`1">
+          <Messages>
+           <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Created="2021-10-10 20:29:02Z" FixCategory="NonBreaking">
+            <Issue Name="NonBreaking">
+             <Item>'AsyncResultWrapper.WrappedAsyncResultBase&lt;TResult&gt;'</Item>
+             <Item>'Timer'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="SynchronizationContextUtil">
+          <Members>
+           <Member Name="#Sync`1(System.Threading.SynchronizationContext,System.Func`1&lt;!!0&gt;)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'SynchronizationContextUtil.Sync&lt;T&gt;(this SynchronizationContext, Func&lt;T&gt;)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="System.Web.Mvc.Html">
+        <Types>
+         <Type Name="DisplayExtensions">
+          <Members>
+           <Member Name="#DisplayFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'DisplayExtensions.DisplayFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DisplayFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'DisplayExtensions.DisplayFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DisplayFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'DisplayExtensions.DisplayFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;, string)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DisplayFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'DisplayExtensions.DisplayFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;, string, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DisplayFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String,System.String)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'DisplayExtensions.DisplayFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;, string, string)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DisplayFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String,System.String,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'DisplayExtensions.DisplayFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;, string, string, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DisplayNameExtensions">
+          <Members>
+           <Member Name="#DisplayNameFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'DisplayNameExtensions.DisplayNameFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DisplayNameFor`2(System.Web.Mvc.HtmlHelper`1&lt;System.Collections.Generic.IEnumerable`1&lt;!!0&gt;&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'DisplayNameExtensions.DisplayNameFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;IEnumerable&lt;TModel&gt;&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+              <Issue>
+               <Item>'DisplayNameExtensions.DisplayNameFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;IEnumerable&lt;TModel&gt;&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;)'</Item>
+               <Item>'HtmlHelper&lt;IEnumerable&lt;TModel&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DisplayTextExtensions">
+          <Members>
+           <Member Name="#DisplayTextFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'DisplayTextExtensions.DisplayTextFor&lt;TModel, TResult&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TResult&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TResult&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="EditorExtensions">
+          <Members>
+           <Member Name="#EditorFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'EditorExtensions.EditorFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#EditorFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'EditorExtensions.EditorFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#EditorFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'EditorExtensions.EditorFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;, string)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#EditorFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'EditorExtensions.EditorFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;, string, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#EditorFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String,System.String)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'EditorExtensions.EditorFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;, string, string)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#EditorFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String,System.String,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'EditorExtensions.EditorFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;, string, string, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="InputExtensions">
+          <Members>
+           <Member Name="#CheckBoxFor`1(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,System.Boolean&gt;&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'InputExtensions.CheckBoxFor&lt;TModel&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, bool&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, bool&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#CheckBoxFor`1(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,System.Boolean&gt;&gt;,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'InputExtensions.CheckBoxFor&lt;TModel&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, bool&gt;&gt;, IDictionary&lt;string, object&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, bool&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#CheckBoxFor`1(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,System.Boolean&gt;&gt;,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'InputExtensions.CheckBoxFor&lt;TModel&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, bool&gt;&gt;, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, bool&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#HiddenFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'InputExtensions.HiddenFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#HiddenFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'InputExtensions.HiddenFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, IDictionary&lt;string, object&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#HiddenFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'InputExtensions.HiddenFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#PasswordFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'InputExtensions.PasswordFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#PasswordFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'InputExtensions.PasswordFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, IDictionary&lt;string, object&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#PasswordFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'InputExtensions.PasswordFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RadioButtonFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'InputExtensions.RadioButtonFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RadioButtonFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Object,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'InputExtensions.RadioButtonFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, object, IDictionary&lt;string, object&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RadioButtonFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Object,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'InputExtensions.RadioButtonFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, object, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TextBoxFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'InputExtensions.TextBoxFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TextBoxFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'InputExtensions.TextBoxFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, IDictionary&lt;string, object&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TextBoxFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'InputExtensions.TextBoxFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TextBoxFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'InputExtensions.TextBoxFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, string)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TextBoxFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'InputExtensions.TextBoxFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, string, IDictionary&lt;string, object&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TextBoxFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'InputExtensions.TextBoxFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, string, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="LabelExtensions">
+          <Members>
+           <Member Name="#LabelFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'LabelExtensions.LabelFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#LabelFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'LabelExtensions.LabelFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;, IDictionary&lt;string, object&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#LabelFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'LabelExtensions.LabelFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#LabelFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'LabelExtensions.LabelFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;, string)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#LabelFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'LabelExtensions.LabelFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;, string, IDictionary&lt;string, object&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#LabelFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'LabelExtensions.LabelFor&lt;TModel, TValue&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TValue&gt;&gt;, string, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TValue&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="NameExtensions">
+          <Members>
+           <Member Name="#IdFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;)">
+            <Messages>
+             <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'expression'</Item>
+               <Item>'NameExtensions.IdFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+               <Item>'LambdaExpression'</Item>
+              </Issue>
+              <Issue>
+               <Item>'html'</Item>
+               <Item>'NameExtensions.IdFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;)'</Item>
+               <Item>'HtmlHelper&lt;TModel&gt;'</Item>
+               <Item>'HtmlHelper'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'NameExtensions.IdFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#NameFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;)">
+            <Messages>
+             <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'expression'</Item>
+               <Item>'NameExtensions.NameFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+               <Item>'LambdaExpression'</Item>
+              </Issue>
+              <Issue>
+               <Item>'html'</Item>
+               <Item>'NameExtensions.NameFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;)'</Item>
+               <Item>'HtmlHelper&lt;TModel&gt;'</Item>
+               <Item>'HtmlHelper'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'NameExtensions.NameFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="SelectExtensions">
+          <Members>
+           <Member Name="#DropDownListFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Collections.Generic.IEnumerable`1&lt;System.Web.Mvc.SelectListItem&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'SelectExtensions.DropDownListFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, IEnumerable&lt;SelectListItem&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DropDownListFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Collections.Generic.IEnumerable`1&lt;System.Web.Mvc.SelectListItem&gt;,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'SelectExtensions.DropDownListFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, IEnumerable&lt;SelectListItem&gt;, IDictionary&lt;string, object&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DropDownListFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Collections.Generic.IEnumerable`1&lt;System.Web.Mvc.SelectListItem&gt;,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'SelectExtensions.DropDownListFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, IEnumerable&lt;SelectListItem&gt;, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DropDownListFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Collections.Generic.IEnumerable`1&lt;System.Web.Mvc.SelectListItem&gt;,System.String)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'SelectExtensions.DropDownListFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, IEnumerable&lt;SelectListItem&gt;, string)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DropDownListFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Collections.Generic.IEnumerable`1&lt;System.Web.Mvc.SelectListItem&gt;,System.String,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'SelectExtensions.DropDownListFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, IEnumerable&lt;SelectListItem&gt;, string, IDictionary&lt;string, object&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#DropDownListFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Collections.Generic.IEnumerable`1&lt;System.Web.Mvc.SelectListItem&gt;,System.String,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'SelectExtensions.DropDownListFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, IEnumerable&lt;SelectListItem&gt;, string, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#EnumDropDownListFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'SelectExtensions.EnumDropDownListFor&lt;TModel, TEnum&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TEnum&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TEnum&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#EnumDropDownListFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'SelectExtensions.EnumDropDownListFor&lt;TModel, TEnum&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TEnum&gt;&gt;, IDictionary&lt;string, object&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TEnum&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#EnumDropDownListFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'SelectExtensions.EnumDropDownListFor&lt;TModel, TEnum&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TEnum&gt;&gt;, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TEnum&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#EnumDropDownListFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'SelectExtensions.EnumDropDownListFor&lt;TModel, TEnum&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TEnum&gt;&gt;, string)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TEnum&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#EnumDropDownListFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'SelectExtensions.EnumDropDownListFor&lt;TModel, TEnum&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TEnum&gt;&gt;, string, IDictionary&lt;string, object&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TEnum&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#EnumDropDownListFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'SelectExtensions.EnumDropDownListFor&lt;TModel, TEnum&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TEnum&gt;&gt;, string, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TEnum&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ListBoxFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Collections.Generic.IEnumerable`1&lt;System.Web.Mvc.SelectListItem&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'SelectExtensions.ListBoxFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, IEnumerable&lt;SelectListItem&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ListBoxFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Collections.Generic.IEnumerable`1&lt;System.Web.Mvc.SelectListItem&gt;,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'SelectExtensions.ListBoxFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, IEnumerable&lt;SelectListItem&gt;, IDictionary&lt;string, object&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ListBoxFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Collections.Generic.IEnumerable`1&lt;System.Web.Mvc.SelectListItem&gt;,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'SelectExtensions.ListBoxFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, IEnumerable&lt;SelectListItem&gt;, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TextAreaExtensions">
+          <Members>
+           <Member Name="#TextAreaFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'TextAreaExtensions.TextAreaFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TextAreaFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'TextAreaExtensions.TextAreaFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, IDictionary&lt;string, object&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TextAreaFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Int32,System.Int32,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'TextAreaExtensions.TextAreaFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, int, int, IDictionary&lt;string, object&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TextAreaFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Int32,System.Int32,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'TextAreaExtensions.TextAreaFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, int, int, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#TextAreaFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'TextAreaExtensions.TextAreaFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ValidationExtensions">
+          <Members>
+           <Member Name="#ValidateFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'ValidationExtensions.ValidateFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ValidationMessageFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'ValidationExtensions.ValidationMessageFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ValidationMessageFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'ValidationExtensions.ValidationMessageFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, string)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ValidationMessageFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'ValidationExtensions.ValidationMessageFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, string, IDictionary&lt;string, object&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ValidationMessageFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;,System.String)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'ValidationExtensions.ValidationMessageFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, string, IDictionary&lt;string, object&gt;, string)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ValidationMessageFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'ValidationExtensions.ValidationMessageFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, string, object)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ValidationMessageFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String,System.Object,System.String)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'ValidationExtensions.ValidationMessageFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, string, object, string)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ValidationMessageFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String,System.String)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'ValidationExtensions.ValidationMessageFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, string, string)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ValueExtensions">
+          <Members>
+           <Member Name="#ValueFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'ValueExtensions.ValueFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ValueFor`2(System.Web.Mvc.HtmlHelper`1&lt;!!0&gt;,System.Linq.Expressions.Expression`1&lt;System.Func`2&lt;!!0,!!1&gt;&gt;,System.String)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2021-10-10 20:29:02Z">
+              <Issue>
+               <Item>'ValueExtensions.ValueFor&lt;TModel, TProperty&gt;(this HtmlHelper&lt;TModel&gt;, Expression&lt;Func&lt;TModel, TProperty&gt;&gt;, string)'</Item>
+               <Item>'Expression&lt;Func&lt;TModel, TProperty&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Rules>
+   <Rule TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020">
+    <Resolution Name="Default">Consider merging the types defined in '{0}' with another namespace.</Resolution>
+   </Rule>
+   <Rule TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011">
+    <Resolution Name="Default">Consider changing the type of parameter {0} in {1} from {2} to its base type {3}. This method appears to only require base class members in its implementation. Suppress this violation if there is a compelling reason to require the more derived type in the method signature.</Resolution>
+   </Rule>
+   <Rule TypeName="DefineAccessorsForAttributeArguments" Category="Microsoft.Design" CheckId="CA1019">
+    <Resolution Name="Default">Add a public read-only property accessor for positional argument {0} of Attribute {1}.</Resolution>
+    <Resolution Name="IncreaseVisibility">If {0} is the property accessor for positional argument {1}, make it public.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+    <Resolution Name="Default">Modify {0} to catch a more specific exception than {1} or rethrow the exception.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104">
+    <Resolution Name="Default">Remove the read-only designation from {0} or change the field to one that is an immutable reference type. If the reference type {1} is, in fact, immutable, exclude this message.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006">
+    <Resolution Name="Default">Consider a design where {0} doesn't nest generic type {1}.</Resolution>
+   </Rule>
+   <Rule TypeName="ICollectionImplementationsHaveStronglyTypedMembers" Category="Microsoft.Design" CheckId="CA1035">
+    <Resolution Name="Default">{0} should provide a strongly typed implementation of ICollection.CopyTo.</Resolution>
+   </Rule>
+   <Rule TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033">
+    <Resolution Name="Default">Make {0} sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of {1} and is visible to derived classes.</Resolution>
+   </Rule>
+   <Rule TypeName="SealMethodsThatSatisfyPrivateInterfaces" Category="Microsoft.Security" CheckId="CA2119">
+    <Resolution Name="Default">{0} is an overridable method that satisfies a member on the private interface '{1}'. Mark the method as final, implement it explicitly or seal its declaring type {2}.</Resolution>
+   </Rule>
+   <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
+    <Resolution Name="NonBreaking">Implement IDisposable on {0} because it creates members of the following IDisposable types: {1}.</Resolution>
+   </Rule>
+   <Rule TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054">
+    <Resolution Name="Default">Change the type of parameter {0} of method {1} from string to System.Uri, or provide an overload of {1}, that allows {0} to be passed as a System.Uri object.</Resolution>
+   </Rule>
+   <Rule TypeName="UriPropertiesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1056">
+    <Resolution Name="Default">Change the type of property {0} from string to System.Uri.</Resolution>
+   </Rule>
+   <Rule TypeName="UriReturnValuesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1055">
+    <Resolution Name="Default">Change the return type of {0} from string to System.Uri.</Resolution>
+   </Rule>
+   <Rule TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024">
+    <Resolution Name="Default">Change {0} to a property if appropriate.</Resolution>
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>

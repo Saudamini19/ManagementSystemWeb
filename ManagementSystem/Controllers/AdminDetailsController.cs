@@ -29,7 +29,7 @@ namespace ManagementSystem.Controllers
                 ManagementSystemEntities obj = new ManagementSystemEntities();
                 if (obj.AdminDetails.Where(m => m.uerName == obk.userName && m.passTxt == obk.password).FirstOrDefault() == null)
                 {
-                    ModelState.AddModelError("Error", "incorrect userid or password");
+                    ModelState.AddModelError("Error", "Incorrect Username or Password");
                     return View();
                 }
                 else

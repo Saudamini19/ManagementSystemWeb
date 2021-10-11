@@ -3,60 +3,51 @@
 @{ ViewBag.Title = "Login"; }
 
 <fieldset>
-    <legend>
-        Login
-    </legend>
+    
+
     @using (Html.BeginForm("Login", "AdminDetails", FormMethod.Post))
     {
-<table>
-    <tr>
-        <td>
-            Username
-        </td>
-        <td>
-            @Html.TextBoxFor(model => model.userName)
-        </td>
-    </tr>
-    <tr>
-        <td>
-        </td>
-        <td>
-            @Html.ValidationMessageFor(model => model.userName, null, new { @class = "text text-danger" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Password
-        </td>
-        <td>
-            @Html.PasswordFor(model => model.password)
-        </td>
-    </tr>
+    <div class=row>
+        <div style="margin-left: 25px; margin-right: auto; float: left;">
+            <h2 style="color: #0d2c56;">NTT Data Talent Development Team</h2>
+            <h4 style="color: #6d6b96;">Training Management System</h4>
+            <h3 style="color: #002c68;">Login</h3>
+            <hr style="color:lightgrey" />
+            <div>
+                <p style="font-size:medium;">Username</p>
+                @Html.TextBoxFor(model => model.userName)
+                @Html.ValidationMessageFor(model => model.userName, null, new { @class = "text text-danger" })
+            </div>
+            <div style="margin-top:9px;">
+                <p style="font-size:medium;">Password</p>
+                @Html.PasswordFor(model => model.password)
+                @Html.ValidationMessageFor(model => model.password, null, new { @class = "text text-danger" })
+            </div>
+            <div style="margin-top:10px;">
+                <input class="btn btn-default", type="submit" value="Login" style="border-color: #002c68; border: 7px thin; color: #002c68; padding: 5px 10px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; "/>
+                @Html.ValidationMessage("Error", null, new { @class = "text text-danger" })
+            </div>
+        </div>
+        <div style="margin-left:auto; margin-right:25px; float:right;">
+            <img src="~/Images/LoginPage.jpg" , style="max-width:100%; height:auto;" />
+        </div>
 
-    <tr>
-        <td>
-        </td>
-        <td>
-            @Html.ValidationMessageFor(model => model.password, null, new { @class = "text text-danger" })
-        </td>
-    </tr>
-    <tr>
-        <td>
-        </td>
-        <td>
-            <table>
-                <tr>
-                    <td>
-                        <input type="submit" ,value="login"/>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.ValidationMessage("Error", null, new { @class = "text text-danger" })
-        </td>
-    </tr>
-</table>}
+        @*<div style="margin-left: 25px; margin-right: auto; float: left;">
+            Username
+            @Html.TextBoxFor(model => model.userName)
+            @Html.ValidationMessageFor(model => model.userName, null, new { @class = "text text-danger" })
+        </div>*@
+
+        <div style="margin-left: 25px; margin-right: auto; margin-top:25px; float: left;">
+            @*Password
+            @Html.PasswordFor(model => model.password)
+            @Html.ValidationMessageFor(model => model.password, null, new { @class = "text text-danger" })*@
+        </div>
+        <div style="margin-left: 25px; margin-right: auto; margin-top:25px; float: left;">
+            @*<br />
+            <input type="submit" ,value="login" />
+            @Html.ValidationMessage("Error", null, new { @class = "text text-danger" })*@
+        </div>
+    </div>    
+ }
 </fieldset>
