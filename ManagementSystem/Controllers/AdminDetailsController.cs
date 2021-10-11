@@ -139,7 +139,11 @@ namespace ManagementSystem.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        public ActionResult Filtering()
+        {
+            ViewBag.Message = "This is a custom test for Admin Details";
+            return View();
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

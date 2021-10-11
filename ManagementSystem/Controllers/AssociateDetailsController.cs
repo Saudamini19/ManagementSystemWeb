@@ -17,6 +17,7 @@ namespace ManagementSystem.Controllers
         // GET: AssociateDetails
         public ActionResult Index()
         {
+            ManagementSystemEntities db = new ManagementSystemEntities();
             var associateDetails = db.AssociateDetails.Include(a => a.BatchDetail);
             return View(associateDetails.ToList());
         }
@@ -119,6 +120,13 @@ namespace ManagementSystem.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Filtering()
+        {
+            ViewBag.Message = "This is a custom test";
+            return View();
+        }
+
 
         protected override void Dispose(bool disposing)
         {
